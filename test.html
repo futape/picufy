@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Picufy</title>
+    </head>
+    <body style="font-family: monospace;">
+        <h1>Picufy</h1>
+        <script src="src/picufy.js"></script>
+        <script>
+            Picufy.config.canvasSize=400;
+            
+            var my_picufy=new Picufy("Picufy");
+            
+            document.body.insertBefore(my_picufy.canvas, document.body.lastChild);
+            
+            var my_picufy_decode=Picufy.decode(my_picufy.canvas),
+                para=document.createElement("p");
+            
+            para.textContent="`my_picufy_decode.text == my_picufy.text`: "+(my_picufy_decode.text==my_picufy.text);
+            document.body.insertBefore(para, document.body.lastChild);
+        </script>
+    </body>
+</html>
